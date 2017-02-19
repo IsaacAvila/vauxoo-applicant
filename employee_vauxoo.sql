@@ -16,7 +16,8 @@ CREATE TABLE employee (
     id          SERIAL,
     first_name  VARCHAR(30) NOT NULL,
     last_name   VARCHAR(30) NOT NULL,
-    department  INT         REFERENCES employee_department(id) NOT NULL
+    department  INT         REFERENCES employee_department(id) NOT NULL,
+    boss        INT         REFERENCES employee                NOT NULL
 );
 
 /* sql2 */
@@ -44,11 +45,11 @@ VALUES ('Design', 'Department in charge to do all the visual work for the client
        ('Marketing', 'The activity of presenting, advertising and selling a company’s products in the best possible way');
 
 /* Inserts employee */
-INSERT INTO employee (first_name, last_name, department)
-VALUES ('Juan', 'Camacho', 1),
-       ('Mike',	'Wazowzki', 3),
-       ('Noam', 'Chomsky', 5),
-       ('Bugs', 'Bunny', 2);
+INSERT INTO employee (first_name, last_name, department, boss)
+VALUES ('Juan', 'Camacho', 1, 1),
+       ('Mike',	'Wazowzki', 3, 1),
+       ('Noam', 'Chomsky', 5, 1),
+       ('Bugs', 'Bunny', 2, 3);
 
 /* Inserts employee_hobby */
 INSERT INTO employee_hobby (name, description)
