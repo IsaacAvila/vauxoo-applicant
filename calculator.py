@@ -1,16 +1,18 @@
 """
-Your module documentation here
+I didn't use any module
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Return the sum from a list
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        I use a loop for the list and sume each value
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        result = 0
+        for value in num_list:
+            result = result + value
+        return result  # Remove this dummy line
